@@ -12,9 +12,16 @@ inputTextE1.addEventListener("input", (event) => {
   const textlength = event.target.value.length;
   countE1.innerHTML = textlength;
 
-  progressbarE1.style.width = textlength * 2.8 + "%";
+  progressbarE1.style.width = `${(textlength / 280) * 100}%`;
 
   if (textlength >= 1 && textlength <= 222) {
     progressbarE1.style.backgroundColor = "blue";
+  } else if (textlength >= 223 && textlength <= 279) {
+    progressbarE1.style.backgroundColor = "yellow";
+  } else if (textlength >= 280) {
+    progressbarE1.style.backgroundColor = "red";
   }
+
 });
+ 
+
